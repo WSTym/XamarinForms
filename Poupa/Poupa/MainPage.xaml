@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Poupa.MainPage">
+
+    <StackLayout Padding="30" Spacing="30" VerticalOptions="StartAndExpand">
+        <StackLayout HeightRequest="180">
+            <Image Source="poupa.png" 
+                   HeightRequest="180" />
+        </StackLayout>
+
+        <StackLayout >
+            <Picker x:Name="Method" Title="Escolha o método de investimento:">
+                <Picker.Items>
+                    <x:String>Poupança</x:String>
+                    <x:String>Tesouso Direto SELIC</x:String>
+                    <x:String>Tesouso Direto IPCA</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <StackLayout Padding="15">
+                <Slider x:Name="Month" Maximum="240"
+                        Minimum="6"                    
+                        Value="12"  
+                        MaximumTrackColor="Gray"
+                        MinimumTrackColor="Green" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="6" Grid.Column="0" HorizontalTextAlignment="Start" />
+                    <Label BindingContext="{x:Reference Month}" 
+                           Text="{Binding Value, StringFormat='{0:0 meses}'}" 
+                           Grid.Column="1" 
+                           HorizontalTextAlignment="Center" 
+                           FontSize="20"
+                           TextColor="Green" />
+                    <Label Text="240" Grid.Column="2" HorizontalTextAlignment="End" />
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+            <Label Text="Valor:" VerticalTextAlignment="Center" />
+
+            <Entry x:Name="Value"
+                   Placeholder="R$"
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand" />
+
+            <Button x:Name="BtnCalculate"
+                    Text="Calcular"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    FontAttributes="Bold" 
+                    Clicked="OnCalculateIncome"/>
+        </StackLayout>
+
+        <Label x:Name="LblResult" 
+               Text="R$ 0,00"
+               FontSize="75"
+               TextColor="Gray" 
+               FontAttributes="Italic"
+               HorizontalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>
