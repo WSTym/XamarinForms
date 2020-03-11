@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Afazeres.MainPage">
+
+    <StackLayout Spacing="20" Padding="30">
+        <!-- Place new controls here -->
+        <Label Text="Tarefa:" />
+
+        <Entry x:Name="taskName" />
+
+        <Picker x:Name="picker" Title="Prioridade">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baixa</x:String>
+                    <x:String>Média</x:String>
+                    <x:String>Alta</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button x:Name="addTask" Text="Adicionar" HorizontalOptions="Center" FontSize="Header" />
+
+        <ListView x:Name="lvTask"/> 
+    </StackLayout>
+
+</ContentPage>
