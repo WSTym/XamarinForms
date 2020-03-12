@@ -4,10 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Afazeres.MainPage">
+             x:Class="Afazeres.MainPage"
+             BackgroundColor="Bisque">
 
     <StackLayout Spacing="20" Padding="30">
         <!-- Place new controls here -->
+        <Image Source="todo.png" WidthRequest="150" />
+        
         <Label Text="Tarefa:" />
 
         <Entry x:Name="taskName" />
@@ -22,9 +25,18 @@
             </Picker.ItemsSource>
         </Picker>
 
-        <Button x:Name="addTask" Text="Adicionar" HorizontalOptions="Center" FontSize="Header" />
+        <ImageButton x:Name="addTask" 
+                     Source="check.png" 
+                     HorizontalOptions="Center" 
+                     BackgroundColor="Green"
+                     BorderColor="DarkGreen"
+                     BorderWidth="3"
+                     WidthRequest="128"
+                     HeightRequest="128"
+                     CornerRadius="64"
+                     IsEnabled="False" />
 
-        <ListView x:Name="lvTask"/> 
+        <ListView x:Name="lvTask" /> 
     </StackLayout>
 
 </ContentPage>

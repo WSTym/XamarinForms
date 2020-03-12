@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{792D6445-F288-49DA-B4CE-A9BA3E1B6A28}</ProjectGuid>
+    <ProjectGuid>{1F08339D-8ADB-4E30-8B05-7BE8D81B3DFC}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Afazeres.UWP</RootNamespace>
-    <AssemblyName>Afazeres.UWP</AssemblyName>
-    <DefaultLanguage>pt-BR</DefaultLanguage>
+    <RootNamespace>_4_20ma.UWP</RootNamespace>
+    <AssemblyName>4_20ma.UWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
@@ -130,9 +130,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="check.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="todo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -150,9 +148,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Afazeres\Afazeres.csproj">
-      <Project>{CD2A3C88-1610-45F1-8F67-97D78022ABE5}</Project>
-      <Name>Afazeres</Name>
+    <ProjectReference Include="..\4_20ma\4_20ma.csproj">
+      <Project>{FD19F799-29D2-4FB3-8EFE-0DDD9FEECE04}</Project>
+      <Name>4_20ma</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
