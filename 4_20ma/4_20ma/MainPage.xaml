@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="_4_20ma.MainPage">
+
+    <StackLayout Padding="50" Spacing="30">
+
+        <StackLayout Spacing="0">
+            <Label Text="4-20mA to m.c.a" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black" />
+            <Label Text="Converter" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black"/>
+        </StackLayout>        
+        
+        <Grid VerticalOptions="StartAndExpand" RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="4mA" Grid.Row="0" Grid.Column="0" />
+            <Entry x:Name="min" Grid.Row="0" Grid.Column="1" Keyboard="Numeric" />
+            <Label Text="20mA" Grid.Row="1" Grid.Column="0" />
+            <Entry x:Name="max" Grid.Row="1" Grid.Column="1" Keyboard="Numeric" />
+            <Label Text="Leitura Atual" Grid.Row="2" Grid.Column="0" />
+            <Entry x:Name="currentValue" Grid.Row="2" Grid.Column="1" Keyboard="Numeric" />
+            <Button x:Name="conv" Text="m.c.a." Grid.Row="3" Grid.Column="0" Clicked="Calculate" />
+            <Label x:Name="result" Text="" Grid.Row="3" Grid.Column="1" FontSize="28" TextColor="Blue" />
+        </Grid>
+
+        <Label Text="©Tym 2020" HorizontalOptions="Center" VerticalOptions="End" />
+        
+    </StackLayout>
+
+</ContentPage>
