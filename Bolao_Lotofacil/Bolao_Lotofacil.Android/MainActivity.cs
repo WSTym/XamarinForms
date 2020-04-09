@@ -21,7 +21,9 @@ namespace Bolao_Lotofacil.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            string dbName = "lotofacil.db3";
+            string dbPath = FileAccessHelper.GetLocalFilePath(dbName);
+            LoadApplication(new App(dbPath, dbName));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

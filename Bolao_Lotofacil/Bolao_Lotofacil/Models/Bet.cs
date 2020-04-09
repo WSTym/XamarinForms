@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Bolao_Lotofacil.Models
 {
-    [Table("Apostas")]
-     public class Aposta
+    [Table("Bets")]
+     public class Bet
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [NotNull]
-        public List<int> Numeros { get; set; }
+        public List<int> Numbers { get; set; }
     }
 }

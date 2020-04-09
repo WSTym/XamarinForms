@@ -7,10 +7,20 @@ namespace Bolao_Lotofacil
 {
     public partial class App : Application
     {
+        public static string DbName;
+        public static string DbPath;
+
         public App()
         {
             InitializeComponent();
 
+            MainPage = new MainPage();
+        }
+        public App(string dbPath, string dbName)
+        {
+            DbName = dbName;
+            DbPath = dbPath;
+            InitializeComponent();
             MainPage = new MainPage();
         }
 
