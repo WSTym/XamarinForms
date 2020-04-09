@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bolao_Lotofacil.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
