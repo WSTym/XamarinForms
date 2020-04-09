@@ -5,38 +5,97 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Afazeres.MainPage"
-             BackgroundColor="Bisque">
+             BackgroundColor="Pink">
 
-    <StackLayout Spacing="20" Padding="30">
-        <!-- Place new controls here -->
+    <StackLayout Spacing="20" Padding="30"> 
+        
         <Image Source="todo.png" WidthRequest="150" />
         
-        <Label Text="Tarefa:" />
+        <StackLayout Orientation="Horizontal">
 
-        <Entry x:Name="taskName" />
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                
+                <Label Text="Tarefa:" />
 
-        <Picker x:Name="picker" Title="Prioridade">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Baixa</x:String>
-                    <x:String>Média</x:String>
-                    <x:String>Alta</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+                <Entry x:Name="taskName" />
 
-        <ImageButton x:Name="addTask" 
-                     Source="check.png" 
-                     HorizontalOptions="Center" 
-                     BackgroundColor="Green"
-                     BorderColor="DarkGreen"
-                     BorderWidth="3"
-                     WidthRequest="128"
-                     HeightRequest="128"
-                     CornerRadius="64"
-                     IsEnabled="False" />
+                <Picker x:Name="picker" 
+                        Title="Prioridade" 
+                        HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Baixa</x:String>
+                            <x:String>Média</x:String>
+                            <x:String>Alta</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
 
-        <ListView x:Name="lvTask" /> 
+                <StackLayout Orientation="Horizontal" Padding="30, 0">
+
+                    <Label Text="BAIXA" TextColor="Green" FontSize="Caption" HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="MÉDIA" TextColor="Yellow" FontSize="Caption" HorizontalOptions="CenterAndExpand" />
+
+                    <Label Text="ALTA" TextColor="Red" FontSize="Caption" HorizontalOptions="EndAndExpand" />
+                    
+                </StackLayout>
+
+            </StackLayout>
+            
+            <ImageButton x:Name="addTask" 
+                         Source="check.png" 
+                         HorizontalOptions="End"
+                         VerticalOptions="Center"
+                         BackgroundColor="Green"
+                         BorderColor="DarkGreen"
+                         BorderWidth="3"
+                         WidthRequest="96"
+                         HeightRequest="96"
+                         CornerRadius="48"
+                         IsEnabled="True"
+                         Clicked="AddNewTask"/>
+
+        </StackLayout>
+
+        <ListView x:Name="lvTask">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            
+                            <Grid HorizontalOptions="FillAndExpand">
+                                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".5*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width=".3*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <BoxView x:Name="bvPriority" Color="{Binding priority}" 
+                                         CornerRadius="20" Margin="10"
+                                         Grid.Row="0" Grid.Column="0" />
+                                
+                                <Label Text="{Binding name}" Grid.Row="0" Grid.Column="1" Padding="10" 
+                                       VerticalOptions="Center" />
+                                
+                                <CheckBox IsChecked="False" CheckedChanged="OnCheckedChanged"
+                                          Grid.Row="0" Grid.Column="2" HorizontalOptions="End" />
+                                
+                            </Grid>
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Text="©Tym 2020" HorizontalOptions="Center" VerticalOptions="End" />
+        
     </StackLayout>
 
 </ContentPage>
