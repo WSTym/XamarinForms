@@ -11,6 +11,6 @@ namespace Bolao_Lotofacil.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [NotNull]
-        public List<int> Numbers { get; set; }
+        public string Numbers { get; set; }
     }
 }

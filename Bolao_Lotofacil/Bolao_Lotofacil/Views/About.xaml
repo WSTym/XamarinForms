@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bolao_Lotofacil.Views.About">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="0, 0, 0, 100" Spacing="20">
+            <Image Source="logo.png" />
+            <Label Text="© 2020 Tym" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Todos os direitos reservados" HorizontalOptions="CenterAndExpand" />            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

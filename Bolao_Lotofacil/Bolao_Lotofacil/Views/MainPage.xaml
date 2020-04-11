@@ -8,13 +8,18 @@
 
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
-            
+            <StackLayout>
+                <Image Source="logo.png" />
+                <Button x:Name="btnHome" Text="Home" Clicked="btnHome_Clicked" />
+                <Button x:Name="btnRegister" Text="Cadastrar Jogo" Clicked="btnRegister_Clicked" />
+                <Button x:Name="btnAbout" Text="Sobre" Clicked="btnAbout_Clicked" />
+            </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
     
     <MasterDetailPage.Detail>
         <ContentPage>
-            
+            <Label x:Name="path"  VerticalOptions="CenterAndExpand" />
         </ContentPage>
     </MasterDetailPage.Detail>
 

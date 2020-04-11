@@ -21,7 +21,10 @@ namespace Bolao_Lotofacil.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new Bolao_Lotofacil.App());
+
+            string dbName = "lotofacil.db3";
+            string dbPath = FileAccessHelper.GetLocalFilePath(dbName);
+            LoadApplication(new Bolao_Lotofacil.App(dbPath, dbName));
         }
     }
 }

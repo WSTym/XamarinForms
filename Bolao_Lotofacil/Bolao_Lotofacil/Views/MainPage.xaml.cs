@@ -16,6 +16,25 @@ namespace Bolao_Lotofacil.Views
         public MainPage()
         {
             InitializeComponent();
+            Detail = new Home();
+        }
+
+        private void btnHome_Clicked(object sender, EventArgs e)
+        {
+            Detail = new Home();
+            IsPresented = false;
+        }
+
+        private void btnRegister_Clicked(object sender, EventArgs e)
+        {
+            Detail = new Register();
+            IsPresented = false;
+        }
+
+        private void btnAbout_Clicked(object sender, EventArgs e)
+        {
+            Detail = new About();
+            IsPresented = false;
         }
     }
 }
